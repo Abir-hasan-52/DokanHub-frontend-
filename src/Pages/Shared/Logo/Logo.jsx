@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 export default function Logo() {
   return (
+    <Link to="/"> 
     <motion.div
       initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: 0 }}
@@ -23,5 +25,6 @@ export default function Logo() {
         Dokan<span className="text-orange-500">Hub</span>
       </h1>
     </motion.div>
+    </Link>
   );
 }
