@@ -1,57 +1,115 @@
 import React from "react";
+import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
+import Logo from "../Logo/Logo";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
-      <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </nav>
-      <nav>
-        <div className="grid grid-flow-col gap-4">
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-            </svg>
-          </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-            </svg>
-          </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-            </svg>
-          </a>
+    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Section */}
+          <div className="space-y-4">
+            <Logo />
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Your trusted online marketplace delivering quality products with exceptional
+              service. Experience seamless shopping with secure payments and fast delivery.
+            </p>
+            <div className="flex items-center gap-3 text-sm text-gray-400">
+              <HiLocationMarker className="text-lg flex-shrink-0" />
+              <span>Dhaka, Bangladesh</span>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+              Quick Links
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-blue-500"></span>
+            </h3>
+            <ul className="space-y-3">
+              {['About Us', 'Shop', 'Track Order', 'Returns & Refunds', 'FAQs'].map((item) => (
+                <li key={item}>
+                  <a className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm cursor-pointer flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all duration-200 mr-0 group-hover:mr-2"></span>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Customer Service */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+              Customer Service
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-blue-500"></span>
+            </h3>
+            <ul className="space-y-3">
+              {['Contact Us', 'Shipping Policy', 'Terms & Conditions', 'Privacy Policy', 'Payment Methods'].map((item) => (
+                <li key={item}>
+                  <a className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm cursor-pointer flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all duration-200 mr-0 group-hover:mr-2"></span>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Social */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+              Get In Touch
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-blue-500"></span>
+            </h3>
+            <div className="space-y-4 mb-6">
+              <a href="mailto:support@dokanhub.com" className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors text-sm group">
+                <HiMail className="text-xl text-blue-400" />
+                <span>support@dokanhub.com</span>
+              </a>
+              <a href="tel:+8801234567890" className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors text-sm group">
+                <HiPhone className="text-xl text-blue-400" />
+                <span>+880 123 456 7890</span>
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-gray-400 mb-3">Follow Us</p>
+              <div className="flex gap-3">
+                {[
+                  { icon: FaFacebook, color: 'hover:bg-blue-600' },
+                  { icon: FaInstagram, color: 'hover:bg-pink-600' },
+                  { icon: FaLinkedin, color: 'hover:bg-blue-700' },
+                  { icon: FaGithub, color: 'hover:bg-gray-700' }
+                ].map(({ icon: Icon, color }, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    aria-label={`social-${index}`}
+                    className={`w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center ${color} transition-all duration-300 cursor-pointer transform hover:scale-110`}
+                  >
+                    <Icon className="text-lg" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-      <aside>
-        <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by ACME
-          Industries Ltd
-        </p>
-      </aside>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} DokanHub. All Rights Reserved.
+          </p>
+          <p className="text-sm text-gray-400">
+            Crafted with <span className="text-red-500">♥</span> by{" "}
+            <NavLink to="https://www.linkedin.com/in/ah-abir" target="_blank" className="text-blue-400 font-medium hover:underline">
+            <span className="text-blue-400 font-medium">Abir Hasan</span>
+            </NavLink>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };

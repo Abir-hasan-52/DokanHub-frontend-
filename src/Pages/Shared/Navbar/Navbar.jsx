@@ -1,18 +1,46 @@
 import React from "react";
 import Logo from "../Logo/Logo";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
 
     const links = (
       <>
-        <li><a>about</a></li>
-        <li><a>services</a></li>
-        <li><a>contact</a></li>
+         <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-orange-600 font-bold" : "text-gray-600"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+         <li>
+        <NavLink
+          to="/about-us"
+          className={({ isActive }) =>
+            isActive ? "text-orange-600 font-bold" : "text-gray-600"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
+        <li>
+        <NavLink
+          to="/contact-us"
+          className={({ isActive }) =>
+            isActive ? "text-orange-600 font-bold" : "text-gray-600"
+          }
+        >
+          contact us
+        </NavLink>
+      </li>
       </>
     );
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className="bg-base-100 shadow-sm ">
+      <div className="max-w-7xl mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
